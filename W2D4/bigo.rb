@@ -3,6 +3,7 @@ def sluggish(fishes)
     biggest = true
     fishes.each_index do |j|
       next if i == j
+
       biggest = false if fishes[j].length > fishes[i].length
     end
     return fishes[i] if biggest == true
