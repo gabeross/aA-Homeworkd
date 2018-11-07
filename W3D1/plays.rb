@@ -35,7 +35,7 @@ class Play
 
   def find_by_playwright(name)
     playwright = Playright.find_by_name(name)
-    plays = PlayDBConnection.instance.execute(<<-SQL, playwright_id)
+    plays = PlayDBConnection.instance.execute(<<-SQL, playwright.id)
       SELECT
         *
       FROM
@@ -96,7 +96,7 @@ class Playwright
     SQL
     return nil unless playwright.length > 0
 
-    Playright.new(playwright.first)
+    Playwright.new(playwright.first)
   end
 
   def initialize(options)
