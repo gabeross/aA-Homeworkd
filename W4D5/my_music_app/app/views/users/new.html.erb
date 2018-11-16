@@ -1,0 +1,21 @@
+<section>
+  <div>
+    <h1>New user!</h1>
+    <form class="" action=" <%= users_url %> " method="post">
+      <%= auth_token %>
+      <label>
+       <h3>Put yer Email here in that box below.</h3>
+       <input type="text" name="user[email]" value="">
+       </label>
+       <h3>Put yer Password in this other box. Don't tell anyone. It's a secret!</h3>
+       <input type="text" name="user[password]" value="">
+       <input type="submit" name="" value="Gooble Gobble">
+    </form>
+    <br>
+      <% if flash.now[:errors] %>
+    <% flash.now[:errors].each do |error| %>
+      <%= error %>
+    <% end %>
+    <% end %>
+  </div>
+</section>
